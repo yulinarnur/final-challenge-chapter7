@@ -1,7 +1,40 @@
+import React, { useState, useEffect } from "react";
 import Header from "../Header";
 import Main from "../Main";
+import CarCardSearch from "../Layout/CarCardSearch";
 
 const CarSearch = () => {
+  const [cars, setCars] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
+  const [driverType, setDriverType] = useState("");
+  const [totalPassenger, setTotalPassenger] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/cars");
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching cars:", error);
+      }
+    };
+    fetchCars();
+  }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const available = driverType === "true";
+    const capacity = totalPassenger ? parseInt(totalPassenger) : 0;
+
+    const filtered = cars.filter(
+      (car) => car.available === available && car.capacity >= capacity
+    );
+    setFilteredCars(filtered);
+  };
+
   return (
     <>
       <Header />
@@ -14,7 +47,7 @@ const CarSearch = () => {
         <div className="filter">
           <form
             id="search-form"
-            action=""
+            onSubmit={handleSearch}
             className="rounded shadow-sm p-3 mb-3"
             style={{ backgroundColor: "#fff" }}
           >
@@ -31,7 +64,8 @@ const CarSearch = () => {
                         required
                         name="driverType"
                         id="driverType"
-                        defaultValue=""
+                        value={driverType}
+                        onChange={(e) => setDriverType(e.target.value)}
                       >
                         <option value="" disabled>
                           Pilih Tipe Driver
@@ -51,6 +85,8 @@ const CarSearch = () => {
                         name="tanggal"
                         id="tanggal"
                         className="form-control body-12-light"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
                         disabled
                       />
                     </div>
@@ -60,61 +96,63 @@ const CarSearch = () => {
                       <label htmlFor="waktu" className="form-label">
                         Waktu Jemput/Ambil
                       </label>
-                      <select
-                        className="form-select body-12-light"
-                        id="waktu"
+                      <input
+                        type="time"
                         name="waktu"
+                        id="waktu"
+                        className="form-control body-12-light"
+                        value={time}
+                        onChange={(e) => setTime(e.target.value)}
                         disabled
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Pilih Waktu
-                        </option>
-                        <option value="8">08.00 WIB</option>
-                        <option value="9">09.00 WIB</option>
-                        <option value="10">10.00 WIB</option>
-                        <option value="11">11.00 WIB</option>
-                        <option value="12">12.00 WIB</option>
-                        <option value="13">13.00 WIB</option>
-                        <option value="14">14.00 WIB</option>
-                        <option value="15">15.00 WIB</option>
-                        <option value="16">16.00 WIB</option>
-                      </select>
+                      />
                     </div>
                   </div>
                   <div className="col-md-6 col-lg-3">
                     <div className="mb-3 mb-lg-0">
-                      <label htmlFor="jumlah" className="form-label">
+                      <label htmlFor="totalPassenger" className="form-label">
                         Jumlah Penumpang (Optional)
                       </label>
-                      <div className="d-flex">
-                        <input
-                          placeholder="Jumlah Penumpang"
-                          type="input"
-                          name="totalPassanger"
-                          id="totalPassanger"
-                          className="form-control body-12-light position-relative"
-                          aria-describedby="jumlah-addon"
-                        />
-                        <img
-                          src="./images/svg/fi_users.svg"
-                          alt=""
-                          className="jumlah-icon"
-                        />
-                      </div>
+                      <input
+                        placeholder="Jumlah Penumpang"
+                        type="number"
+                        name="totalPassenger"
+                        id="totalPassenger"
+                        className="form-control body-12-light"
+                        value={totalPassenger}
+                        onChange={(e) => setTotalPassenger(e.target.value)}
+                      />
                     </div>
                   </div>
                 </div>
               </div>
               <div className="col-lg-2">
-                <button className="btn btn-success" id="btn-search">
+                <button
+                  type="submit"
+                  className="btn btn-success"
+                  id="btn-search"
+                >
                   Cari Mobil
                 </button>
               </div>
             </div>
           </form>
+        </div>
+      </section>
 
-          <div id="insert-car" className="row px-4"></div>
+      <section id="car-results" className="container-lg pt-3 pt-lg-0 px-lg-5">
+        <div className="row">
+          {filteredCars.length === 0 ? (
+            <div className="col">
+              <div
+                className="alert alert-danger d-flex align-items-center"
+                role="alert"
+              >
+                <div className="text-center">Mobil Tidak Ditemukan</div>
+              </div>
+            </div>
+          ) : (
+            filteredCars.map((car) => <CarCardSearch key={car.id} car={car} />)
+          )}
         </div>
       </section>
     </>

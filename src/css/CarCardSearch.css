@@ -1,0 +1,62 @@
+.car-card {
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 250px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fs-5 {
+  font-size: 1.3rem;
+}
+
+.description {
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.specs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+}
+
+.spec-item i {
+  margin-right: 5px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
