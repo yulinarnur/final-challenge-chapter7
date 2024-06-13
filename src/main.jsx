@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import CarSearch from "./components/Search/CarSearch";
+import Login from "./components/Auth/Login";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/cars",
     element: <CarSearch />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
