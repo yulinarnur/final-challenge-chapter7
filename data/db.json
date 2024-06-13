@@ -7,7 +7,7 @@
       "model": "MKZ abc",
       "image": "/images/car03.min.jpg",
       "rentPerDay": "1900000",
-      "capacity": "62",
+      "capacity": "19",
       "description": " Driver & front passenger map pockets. Direct-type tire pressure monitor system. Cargo area lamp. Glove box lamp.",
       "availableAt": "2024-06-10",
       "transmission": "Automanual",
@@ -770,42 +770,6 @@
       "capacity": "5",
       "availableAt": "2024-06-10",
       "image": ""
-    },
-    {
-      "id": "d2b9",
-      "manufacture": "Hyundai Update",
-      "model": "ABC update",
-      "rentPerDay": "920000",
-      "capacity": "5",
-      "availableAt": "2024-06-11",
-      "image": ""
-    },
-    {
-      "id": "2c99",
-      "manufacture": "HRV Update",
-      "model": "A123",
-      "rentPerDay": "780000",
-      "capacity": "7",
-      "availableAt": "2024-06-12",
-      "image": ""
-    },
-    {
-      "id": "e8a0",
-      "manufacture": "subuh",
-      "model": "testes",
-      "rentPerDay": "780000",
-      "capacity": "6",
-      "availableAt": "2024-06-12",
-      "image": "urlll"
-    },
-    {
-      "id": "46b6",
-      "manufacture": "subuh",
-      "model": "testes",
-      "rentPerDay": "780000",
-      "capacity": "6",
-      "availableAt": "2024-06-13",
-      "image": "urlll"
     }
   ]
 }

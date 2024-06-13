@@ -112,7 +112,7 @@ const CarList = () => {
                             </td>
                             <td className="align-middle">
                               <Link
-                                to={`/car-edit/${car.id}`}
+                                to={`car/edit/${car.id}`}
                                 className="text-secondary font-weight-bold text-xs"
                                 data-toggle="tooltip"
                                 data-original-title="Edit car"

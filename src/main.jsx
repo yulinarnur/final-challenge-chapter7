@@ -6,6 +6,7 @@ import CarSearch from "./components/Search/CarSearch";
 import Login from "./components/Auth/Login";
 import CarList from "./components/Admin/CarList";
 import CarAdd from "./components/Admin/CarAdd";
+import CarEdit from "./components/Admin/CarEdit";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/car/add",
     element: <CarAdd />,
+  },
+  {
+    path: "/admin/car/edit/:id",
+    element: <CarEdit />,
   },
 ]);
 
