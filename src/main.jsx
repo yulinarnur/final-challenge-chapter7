@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import CarSearch from "./components/Search/CarSearch";
 import Login from "./components/Auth/Login";
+import CarList from "./components/Admin/CarList";
+import CarAdd from "./components/Admin/CarAdd";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/admin",
+    element: <CarList />,
+  },
+  {
+    path: "/admin/car/add",
+    element: <CarAdd />,
   },
 ]);
 
