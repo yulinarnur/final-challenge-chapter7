@@ -763,13 +763,14 @@
       "image": ""
     },
     {
-      "id": "ba0d",
-      "manufacture": "mencoba",
-      "model": "randomzzz",
-      "rentPerDay": "900001",
-      "capacity": "5",
-      "availableAt": "2024-06-10",
-      "image": ""
+      "id": "bd97",
+      "manufacture": "mobil tayo",
+      "model": "dubidu",
+      "rentPerDay": "8711000",
+      "capacity": "79",
+      "availableAt": "2024-06-12",
+      "image": "yuhuu",
+      "images": "yuhu"
     }
   ]
 }

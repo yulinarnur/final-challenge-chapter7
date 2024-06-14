@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderAdmin from "./HeaderAdmin";
 import FooterAdmin from "./FooterAdmin";
+import { useNavigate } from "react-router-dom";
 
 const CarAdd = () => {
   const [manufacture, setManufacture] = useState("");
@@ -9,6 +10,7 @@ const CarAdd = () => {
   const [capacity, setCapacity] = useState("");
   const [availableAt, setAvailableAt] = useState("");
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
 
   const addCar = () => {
     const newCar = {
@@ -35,6 +37,7 @@ const CarAdd = () => {
       setAvailableAt("");
       setImage("");
       console.log("new car added.");
+      navigate("/admin");
     });
   };
 

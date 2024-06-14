@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <main
@@ -14,12 +15,14 @@ const Main = () => {
             terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
             untuk sewa mobil selama 24 jam.
           </p>
-          <button
-            type="button"
-            className="btn btn-cta btn-success mt-1 fw-bold"
-          >
-            Mulai Sewa Mobil
-          </button>
+          <Link to="/cars">
+            <button
+              type="button"
+              className="btn btn-cta btn-success mt-1 fw-bold"
+            >
+              Mulai Sewa Mobil
+            </button>
+          </Link>
         </div>
         <div className="hero-right col-md-6 hero-right">
           <img

@@ -120,12 +120,16 @@ const CarList = () => {
                                 Edit
                               </Link>{" "}
                               |{" "}
-                              <button
+                              <a
+                                href="#"
                                 className="text-secondary font-weight-bold text-xs"
-                                onClick={() => handleDelete(car.id)}
+                                onClick={(e) => {
+                                  e.preventDefault(); // Prevent default action of the link
+                                  handleDelete(car.id);
+                                }}
                               >
                                 Delete
-                              </button>
+                              </a>
                             </td>
                           </tr>
                         ))}

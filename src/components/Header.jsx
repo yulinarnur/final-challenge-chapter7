@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="container-fluid sticky-top high-shadow p-0" id="header">
@@ -64,12 +66,14 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="nav-item ps-2 fw-normal">
-                  <button
-                    type="button"
-                    className="btn btn-success mt-1 fw-bold fs-7"
-                  >
-                    Register
-                  </button>
+                  <Link to="/login">
+                    <button
+                      type="button"
+                      className="btn btn-success mt-1 fw-bold fs-7"
+                    >
+                      Register
+                    </button>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import HeaderAdmin from "./HeaderAdmin";
 import FooterAdmin from "./FooterAdmin";
 
@@ -13,6 +13,8 @@ const CarEdit = () => {
     availableAt: "",
     image: "",
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
@@ -34,7 +36,7 @@ const CarEdit = () => {
       body: JSON.stringify(car),
     }).then(() => {
       console.log("car updated.");
-      setRefresh(true);
+      navigate("/admin");
     });
   };
 
