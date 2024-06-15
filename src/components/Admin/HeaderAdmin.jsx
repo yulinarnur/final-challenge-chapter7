@@ -29,40 +29,33 @@ const HeaderAdmin = () => {
             <li className="nav-item">
               <a className="nav-link active" href="/dashboard">
                 <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                  <i className="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                  <i className="ni ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                 </div>
                 <span className="nav-link-text ms-1">Dashboard</span>
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/cars">
                 <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                   <i className="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                 </div>
                 <span className="nav-link-text ms-1">Data Cars</span>
               </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="../pages/billing.html">
-                <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                  <i className="ni ni-credit-card text-success text-sm opacity-10"></i>
-                </div>
-                <span className="nav-link-text ms-1">Billing</span>
-              </a>
-            </li>
+            </li> */}
+
             <li className="nav-item mt-3">
               <h6 className="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
                 Account pages
               </h6>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="../pages/profile.html">
                 <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                   <i className="ni ni-single-02 text-dark text-sm opacity-10"></i>
                 </div>
                 <span className="nav-link-text ms-1">Profile</span>
               </a>
-            </li>
+            </li> */}
             <form action="/logout" method="post" id="logoutForm">
               <input type="hidden" name="_method" value="DELETE" />
               <button

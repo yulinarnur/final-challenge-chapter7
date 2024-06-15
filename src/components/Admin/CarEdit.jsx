@@ -127,14 +127,14 @@ const CarEdit = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="images" className="form-label">
+                    <label htmlFor="image" className="form-label">
                       Image
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="images"
-                      name="images"
+                      name="image"
                       value={car.image}
                       onChange={handleChange}
                     />

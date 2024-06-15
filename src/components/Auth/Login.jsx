@@ -18,7 +18,7 @@ const Login = () => {
               <p className="login-welcome">Welcome, Admin BCR</p>
             </div>
             <div className="d-flex align-items-center ms-xl-5">
-              <form action="/login" method="post" style={{ width: "23rem" }}>
+              <form action="/admin" style={{ width: "23rem" }}>
                 <div className="form-group">
                   <label htmlFor="email" className="lbemail">
                     Email
@@ -29,6 +29,7 @@ const Login = () => {
                     id="email"
                     name="email"
                     placeholder="Contoh: johndee@gmail.com"
+                    defaultValue="admin@gmail.com"
                   />
                 </div>
                 <div className="form-group">
@@ -41,6 +42,7 @@ const Login = () => {
                     id="password"
                     name="password"
                     placeholder="6+ karakter"
+                    defaultValue="123456"
                   />
                 </div>
                 <button type="submit" className="btn btn-primary btn-sign">
